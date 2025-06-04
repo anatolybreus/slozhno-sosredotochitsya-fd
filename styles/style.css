@@ -1,5 +1,389 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  color: var(--text-color, #F1B2CE);
+  font-family: var(--main-font, monospace, sans-serif);
+  background-color: var(--bg-color, #000028);
+  background-image: var(--bg-image);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  position: relative;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  height: 100vh;
+  min-height: 668px;
+  padding: 10px;
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: " ";
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--decoration-elements-color);
+  border-block-start: 1px solid var(--decoration-elements-color);
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  position: absolute;
+}
+
+.decorated-zone::after {
+  content: " ";
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--decoration-elements-color);
+  border-block-end: 1px solid var(--decoration-elements-color);
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+  position: absolute;
+}
+
+.rec-decor {
+  justify-self: end;
+  display: var(--rec-decor-display);
+  gap: 10px;
+  align-items: center;
+  margin-inline-end: 8px;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+  position: absolute;
+}
+
+.rec-decor::before {
+  content: "rec";
+  text-transform: uppercase;
+  color: var(--accent-color);
+  font-family: var(--main-font, monospace, sans-serif);
+  font-size: var(--font-size);
+  font-weight: var(--main-font-weight);
+}
+
+.rec-decor::after {
+  content: " ";
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--menu-text-color);
+  font-size: var(--font-size);
+  font-family: var(--main-font, monospace, sans-serif);
+  text-transform: lowercase;
+  padding-block: 0px;
+  padding-inline: 0px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--accent-color-transparent);
+  padding: 0px 13px;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--decoration-elements-color);
+  padding-inline: 13px;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-block-end: 1px solid var(--decoration-elements-color);
+}
+
+.header__title {
+  font-size: var(--font-size-title-mobile);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  color: var(--title-color);
+  line-height: 82.5%;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-family: var(--main-font, monospace, sans-serif);
+  font-weight: var(--accent-font-weight);
+  text-align: left;
+}
+
+.word-shadow-decor {
+  text-shadow: 2px 2px 0px var(--accent-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.word-shadow-decor:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.word-shadow-decor:focus-visible {
+  outline: none;
+  border: 1px solid var(--text-color);
+}
+
+.header__under-title {
+  justify-self: end;
+  text-align: left;
+  align-self: center;
+}
+
+.title-decor,
+.advice-title-decor {
+  background-color: var(--accent-color, #FF0070);
+  color: #000028;
+  font-weight: var(--accent-font-weight);
+  font-size: var(--font-size);
+  line-height: 130%;
+}
+
+.main-content {
+  display: grid;
+  gap: 50px;
+  padding: 40px 10px;
+}
+
+.problem-section,
+.reason-section,
+.advice-section {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+.question {
+  color: var(--question-text-color);
+  font-family: var(--main-font, monospace, sans-serif);
+  font-weight: var(--accent-font-weight);
+  font-size: var(--font-size);
+}
+
+.text {
+  padding-block-start: 10px;
+  font-size: var(--font-size);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  text-align: left;
+  font-family: var(--main-font, monospace, sans-serif);
+  font-weight: var(--main-font-weight);
+  line-height: 23.4px;
+}
+
+.constant-layout,
+.changing-layout {
+  display: grid;
+  gap: 20px;
+}
+
+.image {
+  inline-size: 100%;
+  display: block;
+}
+
+.image-section {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  block-size: 100vh;
+  min-height: 668px;
+}
+
+.footer__title {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  font-size: var(--font-size-title-mobile);
+  color: var(--title-color, #DB00FF);
+  line-height: 82.5%;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-family: var(--main-font, sans-serif);
+  font-weight: var(--accent-font-weight);
+}
+
+@media (width >=768px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header__title {
+    margin-inline-start: -20px;
+    font-size: var(--font-size-title-desktop);
+  }
+
+  .footer__title {
+    font-size: var(--font-size-title-desktop);
+  }
+
+  .decorated-zone::after {
+    inset-block-end: 20px;
+    inset-inline-start: 20px;
+  }
+
+  .decorated-zone::before {
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+  }
+
+  .rec-decor {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .header__under-title {
+    max-width: 50%;
+  }
+
+  .main-content {
+    padding: 60px 20px;
+    gap: 80px;
+  }
+
+  .problem-section,
+  .advice-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .constant-layout {
+    display: grid;
+    gap: 20px;
+    grid-column: span 2;
+  }
+
+  .image-section {
+    gap: 20px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .sunset {
+    grid-row: span 1;
+    grid-column: span 2;
+  }
+
+  .image {
+    object-fit: cover;
+    object-position: center;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  .ice-cream {
+    grid-row: span 2;
+    grid-column: span 1;
+  }
+
+  .tape {
+    grid-row: span 2;
+    grid-column: span 1;
+  }
+
+  .books {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .street {
+    grid-row: span 1;
+    grid-column: span 2;
+  }
+}
+
+@media (768px <=width < 1023px) {
+  .reason-section {
+    display: grid;
+    gap: 20px;
+  }
+
+  .changing-layout {
+    display: grid;
+    gap: 20px;
+  }
+
+  .changing-question {
+    display: grid;
+    grid-auto-columns: min-content auto;
+  }
+}
+
+@media (width >=1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .header__theme-menu-button {
+    padding-inline: 13px;
+  }
+
+  .reason-section {
+    display: grid;
+    gap: 20px;
+  }
+
+  .changing-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .changing-question {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .advice-title-decor {
+    background-color: var(--accent-color, #FF0070);
+    color: #000028;
+    font-weight: var(--main-font-weight);
+    font-size: var(--font-size);
+    line-height: 130%;
+  }
+
 }
