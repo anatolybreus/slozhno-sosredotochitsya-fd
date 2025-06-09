@@ -7,6 +7,7 @@
 .theme-dark .page {
   --main-font: 'IBM Plex Mono';
   --decor-title-text-color: #000028;
+  --bg-color: #000028;
   --text-color: #F1B2CE;
   --accent-color: #FF0070;
   --title-color: #DB00FF;

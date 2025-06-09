@@ -348,6 +348,10 @@
 }
 
 @media (width >=1024px) {
+  .question {
+    width: 314.96px;
+  }
+
   .header__theme-menu {
     justify-self: center;
     align-self: start;
@@ -376,7 +380,6 @@
 
   .changing-question {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .advice-title-decor {
