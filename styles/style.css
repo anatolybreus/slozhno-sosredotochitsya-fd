@@ -158,6 +158,11 @@
   line-height: 130%;
 }
 
+.advice-title-decor {
+  font-weight: var(--main-font-weight);
+
+}
+
 .main-content {
   display: grid;
   gap: 50px;
