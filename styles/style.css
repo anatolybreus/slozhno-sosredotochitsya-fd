@@ -2,7 +2,7 @@
 
 .page {
   color: var(--text-color, #F1B2CE);
-  font-family: var(--main-font, monospace, sans-serif);
+  font-family: var(--main-font, monospace), sans-serif;
   background-color: var(--bg-color, #000028);
   background-image: var(--bg-image);
   background-attachment: fixed;
@@ -59,7 +59,7 @@
   content: "rec";
   text-transform: uppercase;
   color: var(--accent-color);
-  font-family: var(--main-font, monospace, sans-serif);
+  font-family: var(--main-font, monospace), sans-serif;
   font-size: var(--font-size);
   font-weight: var(--main-font-weight);
 }
@@ -93,7 +93,7 @@
   border: 1px solid transparent;
   color: var(--menu-text-color);
   font-size: var(--font-size);
-  font-family: var(--main-font, monospace, sans-serif);
+  font-family: var(--main-font, monospace), sans-serif;
   text-transform: lowercase;
   padding-block: 0px;
   padding-inline: 0px;
@@ -123,7 +123,7 @@
   line-height: 82.5%;
   margin-block-start: 0;
   margin-block-end: 0;
-  font-family: var(--main-font, monospace, sans-serif);
+  font-family: var(--main-font, monospace), sans-serif;
   font-weight: var(--accent-font-weight);
   text-align: left;
 }
@@ -139,8 +139,8 @@
 }
 
 .word-shadow-decor:focus-visible {
-  outline: none;
-  border: 1px solid var(--text-color);
+  outline: 2px solid var(--text-color);
+  border: none;
 }
 
 .header__under-title {
@@ -152,7 +152,7 @@
 .title-decor,
 .advice-title-decor {
   background-color: var(--accent-color, #FF0070);
-  color: #000028;
+  color: var(--decor-title-text-color, #000028);
   font-weight: var(--accent-font-weight);
   font-size: var(--font-size);
   line-height: 130%;
@@ -164,9 +164,7 @@
   padding: 40px 10px;
 }
 
-.problem-section,
-.reason-section,
-.advice-section {
+.section {
   display: grid;
   grid-template-rows: auto;
   gap: 20px;
@@ -174,7 +172,7 @@
 
 .question {
   color: var(--question-text-color);
-  font-family: var(--main-font, monospace, sans-serif);
+  font-family: var(--main-font, monospace), sans-serif;
   font-weight: var(--accent-font-weight);
   font-size: var(--font-size);
 }
@@ -185,13 +183,12 @@
   margin-block-start: 0;
   margin-block-end: 0;
   text-align: left;
-  font-family: var(--main-font, monospace, sans-serif);
+  font-family: var(--main-font, monospace), sans-serif;
   font-weight: var(--main-font-weight);
   line-height: 23.4px;
 }
 
-.constant-layout,
-.changing-layout {
+.layout {
   display: grid;
   gap: 20px;
 }
@@ -236,6 +233,10 @@
 }
 
 @media (width >=768px) {
+  .question {
+    width: 236px;
+  }
+
   .header {
     padding: 20px;
   }
